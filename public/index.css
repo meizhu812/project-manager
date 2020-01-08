@@ -130,6 +130,7 @@ body {
 #projects-details tbody td {
   height: 36px;
   padding: 12px;
+  transition: 250ms;
 }
 
 #projects-details p {
@@ -137,11 +138,11 @@ body {
   margin: 0;
   height: 32px;
   overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  word-break: break-all;
+  word-break: break-word;
+  transition: 250ms;
 }
 
 #projects-details tr {
