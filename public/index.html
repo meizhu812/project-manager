@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>项目管理</title>
+  <link href="./index.css" rel="stylesheet"/>
 </head>
 <body>
-<header id="overview">
+<div id="projects-overview">
   <div class="overview-card">
     <p><span class="projects-type">所有任务</span><span class="card-tag">实时</span></p>
     <p><span class="projects-count">3841</span><span class="projects-percentage"></span></p>
@@ -22,128 +23,130 @@
     <p><span class="projects-type">已解决</span><span class="card-tag">实时</span></p>
     <p><span class="projects-count">1152</span><span class="projects-percentage">30%</span></p>
   </div>
-</header>
-<table>
-  <caption>项目列表</caption>
-  <thead>
-  <tr>
-    <td>项目名称</td>
-    <td>项目描述</td>
-    <td>截止时间</td>
-    <td>状态</td>
-    <td>操作</td>
-  </tr>
-  </thead>
-  <tbody id="projects-list">
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  <tr>
-    <td>Dummy Project</td>
-    <td>
-      DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-    </td>
-    <td>2020-01-01</td>
-    <td>PENDING</td>
-    <td>delete</td>
-  </tr>
-  </tbody>
-</table>
+</div>
+<div id="projects-details">
+  <table>
+    <caption>项目列表</caption>
+    <thead>
+    <tr>
+      <td>项目名称</td>
+      <td>项目描述</td>
+      <td>截止时间</td>
+      <td>状态</td>
+      <td>操作</td>
+    </tr>
+    </thead>
+    <tbody id="projects-list">
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>Dummy Project</td>
+      <td>
+        DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+      </td>
+      <td>2020-01-01</td>
+      <td>PENDING</td>
+      <td>delete</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>

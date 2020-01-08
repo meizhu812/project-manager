@@ -1,0 +1,27 @@
+html{
+  min-width: 1024px;
+}
+#projects-overview{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.overview-card {
+  flex: 1 1 300px;
+  margin:10px;
+}
+#projects-details table{
+  border-collapse: collapse;
+}
+#projects-details tr{
+  border-bottom: 1px solid;
+}
+#projects-details tr td:nth-child(2) {
+  width: 200px;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break:break-all;
+}
