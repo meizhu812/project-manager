@@ -1,13 +1,25 @@
-:root{
-  --color-all: #31b48d;
-  --color-pending: #38a1f2;
-  --color-active: #7538c7;
-  --color-closed: #3b67a4;
+:root {
+  --color-green: #31b48d;
+  --color-blue: #38a1f2;
+  --color-purple: #7538c7;
+  --color-deepblue: #3b67a4;
+  --color-red:  #ed6f6c;
+  --status-pending:  #ed6f6c;
+  --status-active: #666666;
+  --status-closed: #f7da47;
+  --color-text-deep: #333;
+  --color-table-background: #ebecf0;
+  --color-table-brder: #dcdee3
+
 }
 
 html {
   min-width: 1280px;
   font-family: serif, "Microsoft YaHei";
+}
+
+body {
+  margin: 0;
 }
 
 #projects-overview {
@@ -32,19 +44,19 @@ html {
 }
 
 #overview-all {
-  background-color: var(--color-all);
+  background-color: var(--color-green);
 }
 
 #overview-pending {
-  background-color: var(--color-pending);
+  background-color: var(--color-blue);
 }
 
 #overview-active {
-  background-color: var(--color-active);
+  background-color: var(--color-purple);
 }
 
 #overview-closed {
-  background-color: var(--color-closed);
+  background-color: var(--color-deepblue);
 }
 
 .projects-type {
@@ -79,29 +91,74 @@ html {
 }
 
 #projects-details table {
+  margin: 10px;
+  table-layout: auto;
   border-collapse: collapse;
   color: #333;
   width: 100%;
 }
-#projects-details caption{
+
+#projects-details caption {
+  margin: 20px 0;
   text-align: left;
   font-size: 24px;
   font-weight: bold;
 }
-#projects-details thead{
+
+#projects-details thead {
   background: #ebecf0;
-}
-#projects-details tr {
-  border-bottom: 1px solid #dcdee3;
+
 }
 
-#projects-details tr td:nth-child(2) {
-  width: 60%;
-  margin: 0 100px;
+#projects-details thead td:nth-child(1) {
+  width: 300px;
+}
+
+#projects-details thead td:nth-child(2) {
+  width: 600px;
+}
+#projects-details thead td:nth-child(n+3) {
+  width: 200px;
+}
+
+
+#projects-details td {
+  height: 36px;
+  padding: 12px;
+}
+
+#projects-details p {
+  line-height: 16px;
+  margin: 0;
+  height: 32px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   word-break: break-all;
+}
+
+#projects-details tr {
+  border-bottom: 1px solid #dcdee3;
+}
+.status-pending{
+  color: var(--status-pending);
+}
+.status-active{
+  color: var(--status-active);
+}
+.status-closed{
+  color: var(--status-closed);
+}
+.del-btn {
+  background: var(--color-red);
+  color: white;
+  border-radius: 4px;
+  padding: 6px 12px;
+  border-style: none;
+  transition: opacity 100ms;
+}
+.del-btn:active {
+  opacity: 0.5;
 }
