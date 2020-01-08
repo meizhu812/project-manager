@@ -7,78 +7,84 @@
   <link href="./index.css" rel="stylesheet"/>
 </head>
 <body>
-<div id="projects-overview">
-  <div class="overview-card" id = "overview-all">
-    <p><span class="projects-type">所有任务</span><span class="card-tag">实时</span></p>
-    <p><span class="projects-count">3,841</span><span class="projects-percentage"></span></p>
-    <span class="icon iconfont icon-xiangmu"></span>
-  </div>
-  <div class="overview-card" id = "overview-pending">
-    <p><span class="projects-type">未解决</span><span class="card-tag">实时</span></p>
-    <p><span class="projects-count">2,305</span><span class="projects-percentage">60%</span></p>
-    <span class="icon iconfont icon-weijiejue"></span>
+<div id="main">
+  <div id="projects-overview">
+    <div class="overview-card" id="overview-all">
+      <p><span class="projects-type">所有任务</span><span class="card-tag">实时</span></p>
+      <p><span class="projects-count">3,841</span><span class="projects-percentage"></span></p>
+      <span class="icon iconfont icon-xiangmu"></span>
+    </div>
+    <div class="overview-card" id="overview-pending">
+      <p><span class="projects-type">未解决</span><span class="card-tag">实时</span></p>
+      <p><span class="projects-count">2,305</span><span class="projects-percentage">60%</span></p>
+      <span class="icon iconfont icon-weijiejue"></span>
 
-  </div>
-  <div class="overview-card" id = "overview-active">
-    <p><span class="projects-type">处理中</span><span class="card-tag">实时</span></p>
-    <p><span class="projects-count">384</span><span class="projects-percentage">10%</span></p>
-    <span class="icon iconfont icon-loudou"></span>
-  </div>
-  <div class="overview-card" id = "overview-closed">
-    <p><span class="projects-type">已解决</span><span class="card-tag">实时</span></p>
-    <p><span class="projects-count">1,152</span><span class="projects-percentage">30%</span></p>
-    <span class="icon iconfont icon-yijiejue2"></span>
+    </div>
+    <div class="overview-card" id="overview-active">
+      <p><span class="projects-type">处理中</span><span class="card-tag">实时</span></p>
+      <p><span class="projects-count">384</span><span class="projects-percentage">10%</span></p>
+      <span class="icon iconfont icon-loudou"></span>
+    </div>
+    <div class="overview-card" id="overview-closed">
+      <p><span class="projects-type">已解决</span><span class="card-tag">实时</span></p>
+      <p><span class="projects-count">1,152</span><span class="projects-percentage">30%</span></p>
+      <span class="icon iconfont icon-yijiejue2"></span>
 
+    </div>
   </div>
-</div>
-<div id="projects-details">
-  <table>
-    <caption>项目列表</caption>
-    <thead>
-    <tr>
-      <td>项目名称</td>
-      <td>项目描述</td>
-      <td>截止时间</td>
-      <td>状态</td>
-      <td>操作</td>
-    </tr>
-    </thead>
-    <tbody id="projects-list">
-    <tr>
-      <td>Dummy Project</td>
-      <td>
-        <p>
-          DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-        </p>
-      </td>
-      <td>2020-01-01</td>
-      <td class="status-active">ACTIVE</td>
-      <td>delete</td>
-    </tr>
-    <tr>
-      <td>Dummy Project</td>
-      <td>
-        <p>
-          DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-        </p>
-      </td>
-      <td>2020-01-01</td>
-      <td class="status-closed">CLOSED</td>
-      <td><button class="del-btn">删除</button></td>
-    </tr>
-    <tr>
-      <td>Dummy Project</td>
-      <td>
-        <p>
-          DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
-        </p>
-      </td>
-      <td>2020-01-01</td>
-      <td class="status-pending">PENDING</td>
-      <td><button class="del-btn">删除</button></td>
-    </tr>
-    </tbody>
-  </table>
+  <div id="projects-details">
+    <table>
+      <caption>项目列表</caption>
+      <thead>
+      <tr>
+        <td>项目名称</td>
+        <td>项目描述</td>
+        <td>截止时间</td>
+        <td>状态</td>
+        <td>操作</td>
+      </tr>
+      </thead>
+      <tbody id="projects-list">
+      <tr>
+        <td>Dummy Project</td>
+        <td>
+          <p>
+            DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+          </p>
+        </td>
+        <td>2020-01-01</td>
+        <td class="status-active">ACTIVE</td>
+        <td>delete</td>
+      </tr>
+      <tr>
+        <td>Dummy Project</td>
+        <td>
+          <p>
+            DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+          </p>
+        </td>
+        <td>2020-01-01</td>
+        <td class="status-closed">CLOSED</td>
+        <td>
+          <button class="del-btn">删除</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Dummy Project</td>
+        <td>
+          <p>
+            DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+          </p>
+        </td>
+        <td>2020-01-01</td>
+        <td class="status-pending">PENDING</td>
+        <td>
+          <button class="del-btn">删除</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 </body>
 </html>

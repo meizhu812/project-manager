@@ -3,8 +3,8 @@
   --color-blue: #38a1f2;
   --color-purple: #7538c7;
   --color-deepblue: #3b67a4;
-  --color-red:  #ed6f6c;
-  --status-pending:  #ed6f6c;
+  --color-red:  #ee706d;
+  --status-pending:  #ee706d;
   --status-active: #666666;
   --status-closed: #f7da47;
   --color-text-deep: #333;
@@ -21,7 +21,10 @@ html {
 body {
   margin: 0;
 }
-
+#main{
+  width: 1368px;
+  margin: 0 auto;
+}
 #projects-overview {
   display: flex;
   flex-direction: row;
@@ -30,7 +33,7 @@ body {
 
 .overview-card {
   position: relative;
-  flex: 1 0 300px;
+  flex: 1 0 0;
   margin: 10px;
   padding: 10px 20px;
   border-radius: 4px;
@@ -95,7 +98,7 @@ body {
   table-layout: auto;
   border-collapse: collapse;
   color: #333;
-  width: 100%;
+  /*width: 100%;*/
 }
 
 #projects-details caption {
@@ -111,18 +114,20 @@ body {
 }
 
 #projects-details thead td:nth-child(1) {
-  width: 300px;
+  width: 20%;
 }
-
 #projects-details thead td:nth-child(2) {
-  width: 600px;
+  width: 40%;
 }
 #projects-details thead td:nth-child(n+3) {
-  width: 200px;
+  width: 10%;
 }
 
-
-#projects-details td {
+#projects-details thead td {
+  height: 20px;
+  padding: 12px;
+}
+#projects-details tbody td {
   height: 36px;
   padding: 12px;
 }
