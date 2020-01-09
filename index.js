@@ -1,4 +1,4 @@
-import ajax from "../src/ajax.js"
+import ajax from "./src/ajax.js"
 
 const ROOT_URL = "http://localhost:3000/projects";
 const counter = {
