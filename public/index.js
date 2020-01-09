@@ -78,7 +78,7 @@ function handleCLick(outEvt) {
           popupBox.parentElement.removeChild(popupBox);
           break;
       }
-    }))
+    }), false);
   }
 }
 
