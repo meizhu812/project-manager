@@ -1,18 +1,3 @@
-:root {
-  --color-green: #31b48d;
-  --color-blue: #38a1f2;
-  --color-purple: #7538c7;
-  --color-deepblue: #3b67a4;
-
-  --status-pending: #ee706d;
-  --status-active: #666666;
-  --status-closed: #f7da47;
-  --delete-button: var(--status-pending);
-
-  --table-head: #ebecf0;
-  --table-border: #dcdee3;
-  --gray-text: #333;
-}
 *{
   margin:0;
 }
@@ -54,20 +39,20 @@ body {
   justify-content: space-between;
 }
 
-#overview-all {
-  background-color: var(--color-green);
+#overview-ALL {
+  background-color: #31b48d;
 }
 
-#overview-pending {
-  background-color: var(--color-blue);
+#overview-PENDING {
+  background-color: #38a1f2;
 }
 
-#overview-active {
-  background-color: var(--color-purple);
+#overview-ACTIVE {
+  background-color: #7538c7;
 }
 
-#overview-closed {
-  background-color: var(--color-deepblue);
+#overview-CLOSED {
+  background-color: #3b67a4;
 }
 
 .projects-type {
@@ -107,7 +92,7 @@ body {
   margin: 10px;
   table-layout: auto;
   border-collapse: collapse;
-  color: var(--gray-text);
+  color: #333;
   /*width: 100%;*/
 }
 
@@ -119,7 +104,7 @@ body {
 }
 
 #projects-details thead {
-  background: var(--table-head);
+  background: #ebecf0;
 
 }
 
@@ -159,23 +144,23 @@ body {
 }
 
 #projects-details tr {
-  border-bottom: 1px solid var(--table-border);
+  border-bottom: 1px solid #dcdee3;
 }
 
-.status-pending {
-  color: var(--status-pending);
+.status-PENDING {
+  color: #ee706d;
 }
 
-.status-active {
-  color: var(--status-active);
+.status-ACTIVE {
+  color: #666666;
 }
 
-.status-closed {
-  color: var(--status-closed);
+.status-CLOSED {
+  color: #f7da47;
 }
 
 .del-btn {
-  background: var(--delete-button);
+  background: #ee706d;
   color: white;
   border-radius: 4px;
   padding: 6px 12px;
