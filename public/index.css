@@ -207,7 +207,7 @@ body {
   border-radius: 4px;
 }
 
-.close-button {
+#close-button {
   margin: 20px;
   color: #666;
   display: block;
@@ -216,7 +216,7 @@ body {
   background: none;
   font-size:16px;
 }
-.close-button:active {
+#close-button:active {
   color: red;
 }
 .hint-box {
@@ -258,14 +258,14 @@ body {
   border-radius: 3px;
 }
 
-.confirm-button {
+#confirm-button {
   border: 1px solid;
   background-color: #3080fe;
   border-color: #e2ddd5 #90897e #90897e #e2ddd5;
   color: white;
 }
 
-.cancel-button {
+#cancel-button {
   background-color: white;
   border: 1px solid;
   color: #333;

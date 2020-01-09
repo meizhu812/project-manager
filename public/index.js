@@ -53,11 +53,12 @@ function updateProjectsCount(statusType, offset) {
 function handleButtonCLick(event) {
   let bodyElement = document.body;
   let target = event.target;
-  if (target.tagName ==="BUTTON"){
-    bodyElement.innerHTML = bodyElement.innerHTML
-      + '<div id="mask">'
-      + '<div class="confirm-box">'
-      + '<span class="iconfont icon-guanbi close-button"></span>'
+  if (target.tagName === "BUTTON") {
+    let mask = document.createElement("div");
+    mask.setAttribute("id", "mask");
+    mask.innerHTML
+      = '<div class="confirm-box">'
+      + '<span class="iconfont icon-guanbi" id="close-button"></span>'
       + '<div class="hint-box">'
       + '<p class="iconfont icon-wenhao hint-icon"></p>'
       + '<div class="hint-body">'
@@ -65,12 +66,22 @@ function handleButtonCLick(event) {
       + '<p class="hint-text">确认删除该项目吗?</p>'
       + '</div></div>'
       + '<div id="buttons">'
-      + '<button class="confirm-button">确认</button>'
-      + '<button class="cancel-button">取消</button>'
-      + '</div></div></div>'
-  }
-  }
+      + '<button id="confirm-button">确认</button>'
+      + '<button id="cancel-button">取消</button>'
+      + '</div></div>';
+    bodyElement.appendChild(mask);
+    mask.children[0].addEventListener('click', (evt => {
+      switch (evt.target.id) {
+        case("close-button"):
+        case ("cancel-button"):
+          mask.parentElement.removeChild(mask);
+          break;
+      }
+    }))
 
+
+  }
+}
 
 
 function renderOverviewCards() {
