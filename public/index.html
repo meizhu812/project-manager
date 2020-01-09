@@ -8,31 +8,29 @@
 </head>
 <body>
 <div id="main">
-  <div id="projects-overview">
-    <div class="overview-card" id="overview-ALL">
-      <p><span class="projects-type">所有任务</span><span class="card-tag">实时</span></p>
-      <p><span class="projects-count"></span></p>
-      <span class="icon iconfont icon-xiangmu"></span>
-    </div>
-    <div class="overview-card" id="overview-PENDING">
-      <p><span class="projects-type">未解决</span><span class="card-tag">实时</span></p>
-      <p><span class="projects-count"></span><span class="projects-percentage">60%</span></p>
-      <span class="icon iconfont icon-weijiejue"></span>
-
-    </div>
-    <div class="overview-card" id="overview-ACTIVE">
-      <p><span class="projects-type">处理中</span><span class="card-tag">实时</span></p>
-      <p><span class="projects-count"></span><span class="projects-percentage">10%</span></p>
-      <span class="icon iconfont icon-loudou"></span>
-    </div>
-    <div class="overview-card" id="overview-CLOSED">
-      <p><span class="projects-type">已解决</span><span class="card-tag">实时</span></p>
-      <p><span class="projects-count"></span><span class="projects-percentage">30%</span></p>
-      <span class="icon iconfont icon-yijiejue2"></span>
-
-    </div>
-  </div>
-  <div id="projects-details">
+  <section id="overview-cards">
+    <article id="card-ALL">
+      <p><span class="card-type">所有任务</span><span class="card-tag">实时</span></p>
+      <p><span class="card-count"></span></p>
+      <span class="card-icon iconfont icon-xiangmu"></span>
+    </article>
+    <article id="card-PENDING">
+      <p><span class="card-type">未解决</span><span class="card-tag">实时</span></p>
+      <p><span class="card-count"></span><span class="card-percent"></span></p>
+      <span class="card-icon iconfont icon-weijiejue"></span>
+    </article>
+    <article id="card-ACTIVE">
+      <p><span class="card-type">处理中</span><span class="card-tag">实时</span></p>
+      <p><span class="card-count"></span><span class="card-percent"></span></p>
+      <span class="card-icon iconfont icon-loudou"></span>
+    </article>
+    <article id="card-CLOSED">
+      <p><span class="card-type">已解决</span><span class="card-tag">实时</span></p>
+      <p><span class="card-count"></span><span class="card-percent"></span></p>
+      <span class="card-icon iconfont icon-yijiejue2"></span>
+    </article>
+  </section>
+  <section id="projects-details">
     <table>
       <caption>项目列表</caption>
       <thead>
@@ -44,14 +42,13 @@
         <td>操作</td>
       </tr>
       </thead>
-      <tbody id="projects-list">
+      <tbody id="entries">
       <!-- initProjects() -->
       </tbody>
     </table>
-  </div>
-
+  </section>
 </div>
-
+<!-- renderConfirmBox() -->
 <script type="module" src="./index.js"></script>
 <script type="module" src="../src/ajax.js"></script>
 </body>
