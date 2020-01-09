@@ -39,7 +39,7 @@ function renderRow(data) {
   let row = document.createElement("tr");
   row.innerHTML
     = `<td>${data.name}</td>`
-    + `<td><p>${data.description}</p</td>`
+    + `<td><p title="${data.description}">${data.description}</p</td>`
     + `<td>${data.endTime}</td>`
     + `<td class="status-${data.status}">${data.status}</td>`
     + `<td><button class="del-btn" data-id =${data.id}>删除</button></td>`;
