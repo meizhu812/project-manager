@@ -64,10 +64,9 @@ function renderOverviewCards() {
 }
 
 function handleCLick(outEvt) {
-  let bodyElement = document.body;
   if (outEvt.target.tagName === "BUTTON") {
     let boxWithMask = renderConfirmBox();
-    bodyElement.appendChild(boxWithMask);
+    document.body.appendChild(boxWithMask);
     boxWithMask.children[0].addEventListener('click', (inEvt => {
       switch (inEvt.target.id) {
         case("close-btn"):
