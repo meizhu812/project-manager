@@ -11,7 +11,7 @@ const idRowMap = new Map();
 
 window.onload = () => {
   getAllProjects();
-  document.querySelector("#entries").addEventListener("click", handleButtonCLick, false);
+  document.querySelector("#entries").addEventListener("click", handleCLick, false);
 };
 
 function getAllProjects() {
@@ -55,15 +55,15 @@ function updateProjectsCount(statusType, offset) {
 function renderOverviewCards() {
   let cards = document.querySelectorAll("#overview-cards article");
   for (let card of cards) {
-    card.querySelector(".card-count").innerHTML = counter[card.id.replace("card-", "")];
-    if (card.id !== "card-ALL") {
-      card.querySelector(".card-percent").innerHTML
-        = Math.round(counter[card.id.substring(5)] / counter.ALL * 100).toString() + "%";  // "card-".length = 5
+    let status = card.id.substring(5);  // "card-".length = 5
+    card.querySelector(".card-count").innerHTML = counter[status];
+    if (status !== "ALL") {
+      card.querySelector(".card-percent").innerHTML = Math.round(counter[status] / counter.ALL * 100).toString() + "%";
     }
   }
 }
 
-function handleButtonCLick(outEvt) {
+function handleCLick(outEvt) {
   let bodyElement = document.body;
   if (outEvt.target.tagName === "BUTTON") {
     let boxWithMask = renderConfirmBox();
