@@ -37,13 +37,12 @@ function initEntries(allData) {
 
 function renderRow(data) {
   let row = document.createElement("tr");
-  row.setAttribute("data-id", data.id);
   row.innerHTML
     = `<td>${data.name}</td>`
     + `<td><p>${data.description}</p</td>`
     + `<td>${data.endTime}</td>`
     + `<td class="status-${data.status}">${data.status}</td>`
-    + `<td><button class="del-btn">删除</button></td>`;
+    + `<td><button class="del-btn" data-id =${data.id}>删除</button></td>`;
   return row
 }
 
@@ -54,30 +53,29 @@ function updateProjectsCount(statusType, offset) {
 }
 
 function renderOverviewCards() {
-  let cards = document.getElementsByClassName("overview-card");
+  let cards = document.getElementById("overview-cards").getElementsByTagName("article");
   for (let card of cards) {
-    card.getElementsByClassName("projects-count")[0].innerHTML = projectCounts[card.id.replace("overview-", "")];
-    if (card.id !== "overview-ALL") {
-      card.getElementsByClassName("projects-percentage")[0].innerHTML
-        = Math.round(projectCounts[card.id.replace("overview-", "")] / projectCounts.ALL * 100).toString() + "%";
+    card.getElementsByClassName("card-count")[0].innerHTML = projectCounts[card.id.replace("card-", "")];
+    if (card.id !== "card-ALL") {
+      card.getElementsByClassName("card-percent")[0].innerHTML
+        = Math.round(projectCounts[card.id.replace("card-", "")] / projectCounts.ALL * 100).toString() + "%";
     }
   }
 }
 
 function handleButtonCLick(outEvt) {
   let bodyElement = document.body;
-  let target = outEvt.target;
-  if (target.tagName === "BUTTON") {
+  if (outEvt.target.tagName === "BUTTON") {
     let boxWithMask = renderConfirmBox();
     bodyElement.appendChild(boxWithMask);
     boxWithMask.children[0].addEventListener('click', (inEvt => {
       switch (inEvt.target.id) {
-        case("close-button"):
-        case ("cancel-button"):
+        case("close-btn"):
+        case ("cancel-btn"):
           boxWithMask.parentElement.removeChild(boxWithMask);
           break;
-        case ("confirm-button"):
-          deleteProject(Number(outEvt.target.parentElement.parentElement.getAttribute("data-id")));
+        case ("confirm-btn"):
+          deleteProject(Number(outEvt.target.getAttribute("data-id")));
           boxWithMask.parentElement.removeChild(boxWithMask);
           break;
       }
@@ -89,17 +87,17 @@ function renderConfirmBox() {
   let boxWithMask = document.createElement("div");
   boxWithMask.setAttribute("id", "mask");
   boxWithMask.innerHTML
-    = '<div class="confirm-box">'
-    + '<span class="iconfont icon-guanbi" id="close-button"></span>'
-    + '<div class="hint-box">'
+    = '<div class="popup-box">'
+    + '<span class="iconfont icon-guanbi" id="close-btn"></span>'
+    + '<div class="hint-msg">'
     + '<p class="iconfont icon-wenhao hint-icon"></p>'
     + '<div class="hint-body">'
     + '<p class="hint-title">提示</p>'
     + '<p class="hint-text">确认删除该项目吗?</p>'
     + '</div></div>'
     + '<div id="buttons">'
-    + '<button id="confirm-button">确认</button>'
-    + '<button id="cancel-button">取消</button>'
+    + '<button id="confirm-btn">确认</button>'
+    + '<button id="cancel-btn">取消</button>'
     + '</div></div>';
   return boxWithMask
 }
