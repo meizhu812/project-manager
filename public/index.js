@@ -65,28 +65,28 @@ function renderOverviewCards() {
 
 function handleCLick(outEvt) {
   if (outEvt.target.tagName === "BUTTON") {
-    let boxWithMask = renderConfirmBox();
-    document.body.appendChild(boxWithMask);
-    boxWithMask.children[0].addEventListener('click', (inEvt => {
+    let popupBox = renderPopupBox();
+    document.body.appendChild(popupBox);
+    popupBox.children[0].addEventListener('click', (inEvt => {
       switch (inEvt.target.id) {
         case("close-btn"):
         case ("cancel-btn"):
-          boxWithMask.parentElement.removeChild(boxWithMask);
+          popupBox.parentElement.removeChild(popupBox);
           break;
         case ("confirm-btn"):
           deleteProject(Number(outEvt.target.getAttribute("data-id")));
-          boxWithMask.parentElement.removeChild(boxWithMask);
+          popupBox.parentElement.removeChild(popupBox);
           break;
       }
     }))
   }
 }
 
-function renderConfirmBox() {
+function renderPopupBox() {
   let boxWithMask = document.createElement("div");
   boxWithMask.setAttribute("id", "mask");
   boxWithMask.innerHTML
-    = '<div class="popup-box">'
+    = '<div class="msg-box">'
     + '<span class="iconfont icon-guanbi" id="close-btn"></span>'
     + '<div class="hint-msg">'
     + '<p class="iconfont icon-wenhao hint-icon"></p>'
