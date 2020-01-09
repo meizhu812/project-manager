@@ -4,7 +4,7 @@
 
 html {
   min-width: 1280px;
-  font-family: "Times New Roman", "Droid Sans Fallback";
+  font-family: serif, "Microsoft YaHei";
   font-size-adjust: 0.48;
 }
 
@@ -22,20 +22,19 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  font-family: "Jomolhari", "Droid Sans Fallback";
 }
 
 #overview-cards article {
   position: relative;
   flex: 1 0 0;
   margin: 10px;
-  padding: 5px 20px;
+  padding: 16px 20px;
   border-radius: 4px;
   color: white;
 }
 
 #overview-cards article p {
-  margin: 16px 0;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -70,7 +69,7 @@ body {
 .card-tag {
   align-self: center;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 24px;
   border-radius: 4px;
   padding: 0 4px;
   background-color: rgba(255, 255, 255, 0.3);
