@@ -1,13 +1,6 @@
 {
   "projects": [
     {
-      "id": 9,
-      "name": "EventBus",
-      "endTime": "2018-12-09",
-      "description": "EventBus 是 Android 事件管理总线, 使用它可以替带 Android BroadCast, BroadCastReceiver, Handler 在 Activity, Fragment, Service, 线程之间传递消息, 大大简化了事件传递逻辑",
-      "status": "PENDING"
-    },
-    {
       "id": 10,
       "name": "android-async-http",
       "endTime": "2018-12-10",
