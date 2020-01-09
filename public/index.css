@@ -35,6 +35,7 @@ body {
 }
 
 #overview-cards article p {
+  margin: 16px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -133,15 +134,12 @@ body {
 
 #projects-details p {
   line-height: 24px;
-  margin: 0;
   max-height: 48px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   word-break: break-all;
-  transition: 250ms;
-
 }
 
 #projects-details tr {
