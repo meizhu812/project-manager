@@ -7,7 +7,7 @@ function isValidOptions(options) {  // GET & DELETE only!!!
 
 export default (options) => {
   if (!isValidOptions(options)) {
-    console.log('Invalid AJAX options\n' + JSON.stringify(options));  // REVIEW
+    console.log('Invalid AJAX options\n' + JSON.stringify(options));
   }
   let request = new XMLHttpRequest();
   request.open(options.method.toUpperCase(), options.url);

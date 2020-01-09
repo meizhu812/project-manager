@@ -20,9 +20,6 @@ function getAllProjects() {
     {
       url: ROOT_URL,
       method: 'get',
-      params: {},
-      headers: {},
-      data: "",
       success: initProjectsList,
       fail: ajaxFailed
     }
@@ -112,8 +109,6 @@ function deleteProject(id) {
   ajax({
     url: ROOT_URL + '/' + id.toString(),
     method: 'delete',
-    headers: {},
-    data: "",
     success: removeProjectFromList,
     successParams: [id],
     fail: ajaxFailed
