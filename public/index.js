@@ -50,6 +50,29 @@ function updateProjectsCount(statusType, offset) {
   renderOverviewCards()
 }
 
+function handleButtonCLick(event) {
+  let bodyElement = document.body;
+  let target = event.target;
+  if (target.tagName ==="BUTTON"){
+    bodyElement.innerHTML = bodyElement.innerHTML
+      + '<div id="mask">'
+      + '<div class="confirm-box">'
+      + '<span class="iconfont icon-guanbi close-button"></span>'
+      + '<div class="hint-box">'
+      + '<p class="iconfont icon-wenhao hint-icon"></p>'
+      + '<div class="hint-body">'
+      + '<p class="hint-title">提示</p>'
+      + '<p class="hint-text">确认删除该项目吗?</p>'
+      + '</div></div>'
+      + '<div id="buttons">'
+      + '<button class="confirm-button">确认</button>'
+      + '<button class="cancel-button">取消</button>'
+      + '</div></div></div>'
+  }
+  }
+
+
+
 function renderOverviewCards() {
   let cards = document.getElementsByClassName("overview-card");
   for (let card of cards) {
@@ -61,4 +84,8 @@ function renderOverviewCards() {
   }
 }
 
-window.onload = getAllProjects;
+window.onload = () => {
+  getAllProjects();
+  let projectsList = document.getElementById("projects-list");
+  projectsList.addEventListener("click", handleButtonCLick, false);
+};
