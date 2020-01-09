@@ -166,12 +166,11 @@ body {
   border-radius: 4px;
   padding: 8px 12px;
   border-style: none;
-  transition: opacity 100ms;
   cursor: pointer;
 }
 
 .del-btn:active {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 #mask {
@@ -193,18 +192,20 @@ body {
   border-radius: 4px;
 }
 
+[id$="btn"] {
+  cursor: pointer;
+}
+
 #close-btn {
-  margin: 20px;
-  color: #666;
   display: block;
   float: right;
-  border-style: none;
-  background: none;
+  color: #666;
   font-size: 16px;
+  margin: 20px;
 }
 
 #close-btn:active {
-  color: red;
+  opacity: 0.3
 }
 
 .hint-msg {
@@ -244,11 +245,13 @@ body {
 }
 
 #buttons button {
+  margin: 0 5px;
   padding: 6px 12px;
   font-size: 12px;
   font-family: "Microsoft YaHei", sans-serif;
   border-radius: 3px;
 }
+
 
 #confirm-btn {
   border: 1px solid;
@@ -257,9 +260,17 @@ body {
   color: white;
 }
 
+#confirm-btn:active {
+  border-color: #90897e #e2ddd5 #e2ddd5 #90897e;
+}
+
 #cancel-btn {
   background-color: white;
   border: 1px solid;
   color: #333;
   border-color: #bec1cb #6d7076 #6d7076 #bec1cb;
+}
+
+#cancel-btn:active {
+  border-color: #6d7076 #bec1cb #bec1cb #6d7076;
 }

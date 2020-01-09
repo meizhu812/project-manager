@@ -87,12 +87,12 @@ function renderPopupBox() {
   boxWithMask.setAttribute("id", "mask");
   boxWithMask.innerHTML
     = '<div class="msg-box">'
-    + '<span class="iconfont icon-guanbi" id="close-btn"></span>'
+    + '<p class="iconfont icon-guanbi" id="close-btn"></p>'
     + '<div class="hint-msg">'
     + '<p class="iconfont icon-wenhao hint-icon"></p>'
     + '<div class="hint-body">'
     + '<p class="hint-title">提示</p>'
-    + '<p class="hint-text">确认删除该项目吗?</p>'
+    + '<p class="hint-text">确认删除该项目吗？</p>'
     + '</div></div>'
     + '<div id="buttons">'
     + '<button id="confirm-btn">确认</button>'
@@ -105,13 +105,13 @@ function deleteProject(id) {
   ajax({
     url: ROOT_URL + '/' + id.toString(),
     method: 'delete',
-    success: removeProjectFromList,
+    success: removeEntry,
     successParams: [id],
     fail: ajaxFailed
   })
 }
 
-function removeProjectFromList(id) {
+function removeEntry(id) {
   let target = idRowMap.get(id);
   let status = target.querySelector('td[class^=status]').innerHTML;
   target.parentElement.removeChild(target);
