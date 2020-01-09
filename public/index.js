@@ -2,17 +2,16 @@ import ajax from "../src/ajax.js"
 
 const ROOT_URL = "http://localhost:3000/projects";
 const projectCounts = {
-  pending: 0,
-  active: 0,
-  closed: 0,
-  all: 0
+  PENDING: 0,
+  ACTIVE: 0,
+  CLOSED: 0,
+  ALL: 0
 };
 const idRowMap = new Map();
 
 window.onload = () => {
   getAllProjects();
-  let projectsList = document.getElementById("projects-list");
-  projectsList.addEventListener("click", handleButtonCLick, false);
+  document.getElementById("projects-list").addEventListener("click", handleButtonCLick, false);
 };
 
 function getAllProjects() {
@@ -32,7 +31,7 @@ function initProjectsList(allData) {
     let rowElement = renderRow(data);
     projectsList.appendChild(rowElement);
     idRowMap.set(data.id, rowElement);
-    updateProjectsCount(data.status.toLowerCase(), 1);
+    updateProjectsCount(data.status, 1);
   }
 }
 
@@ -43,7 +42,7 @@ function renderRow(data) {
     = `<td>${data.name}</td>`
     + `<td><p>${data.description}</p</td>`
     + `<td>${data.endTime}</td>`
-    + `<td class="status-${data.status.toLowerCase()}">${data.status.toUpperCase()}</td>`
+    + `<td class="status-${data.status}">${data.status}</td>`
     + `<td><button class="del-btn">删除</button></td>`;
   return row
 }
@@ -58,7 +57,7 @@ function renderOverviewCards() {
   let cards = document.getElementsByClassName("overview-card");
   for (let card of cards) {
     card.getElementsByClassName("projects-count")[0].innerHTML = projectCounts[card.id.replace("overview-", "")];
-    if (card.id !== "overview-all") {
+    if (card.id !== "overview-ALL") {
       card.getElementsByClassName("projects-percentage")[0].innerHTML
         = Math.round(projectCounts[card.id.replace("overview-", "")] / projectCounts.all * 100).toString() + "%";
     }
@@ -117,7 +116,7 @@ function deleteProject(id) {
 
 function removeProjectFromList(id) {
   let target = idRowMap.get(id);
-  let status = target.querySelector('td[class^=status]').innerHTML.toLowerCase();
+  let status = target.querySelector('td[class^=status]').innerHTML;
   target.parentElement.removeChild(target);
   updateProjectsCount(status, -1);
 }
