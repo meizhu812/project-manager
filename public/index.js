@@ -11,7 +11,7 @@ const idRowMap = new Map();
 
 window.onload = () => {
   getAllProjects();
-  document.getElementById("projects-list").addEventListener("click", handleButtonCLick, false);
+  document.getElementById("entries").addEventListener("click", handleButtonCLick, false);
 };
 
 function getAllProjects() {
@@ -19,17 +19,17 @@ function getAllProjects() {
     {
       url: ROOT_URL,
       method: 'get',
-      success: initProjectsList,
+      success: initEntries,
       fail: ajaxFailed
     }
   );
 }
 
-function initProjectsList(allData) {
-  let projectsList = document.getElementById("projects-list");
+function initEntries(allData) {
+  let entries = document.getElementById("entries");
   for (let data of allData) {
     let rowElement = renderRow(data);
-    projectsList.appendChild(rowElement);
+    entries.appendChild(rowElement);
     idRowMap.set(data.id, rowElement);
     updateProjectsCount(data.status, 1);
   }
@@ -49,7 +49,7 @@ function renderRow(data) {
 
 function updateProjectsCount(statusType, offset) {
   projectCounts[statusType] += offset;
-  projectCounts.all += offset;
+  projectCounts.ALL += offset;
   renderOverviewCards()
 }
 
@@ -59,7 +59,7 @@ function renderOverviewCards() {
     card.getElementsByClassName("projects-count")[0].innerHTML = projectCounts[card.id.replace("overview-", "")];
     if (card.id !== "overview-ALL") {
       card.getElementsByClassName("projects-percentage")[0].innerHTML
-        = Math.round(projectCounts[card.id.replace("overview-", "")] / projectCounts.all * 100).toString() + "%";
+        = Math.round(projectCounts[card.id.replace("overview-", "")] / projectCounts.ALL * 100).toString() + "%";
     }
   }
 }
