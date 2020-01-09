@@ -43,13 +43,13 @@ function renderRow(data) {
     + `<td>${data.endTime}</td>`
     + `<td class="status-${data.status}">${data.status}</td>`
     + `<td><button class="del-btn" data-id =${data.id}>删除</button></td>`;
-  return row
+  return row;
 }
 
 function updateProjectsCount(statusType, offset) {
   counter[statusType] += offset;
   counter.ALL += offset;
-  renderOverviewCards()
+  renderOverviewCards();
 }
 
 function renderOverviewCards() {
@@ -119,5 +119,5 @@ function removeProjectFromList(id) {
 }
 
 function ajaxFailed(text) {
-  console.log("AJAX Failed" + text)
+  console.log("AJAX Failed" + text);
 }
