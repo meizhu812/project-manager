@@ -1,4 +1,4 @@
-import {ajax} from "./ajax.js"
+import {ajax} from "./ajax.js";
 
 const ROOT_URL = "http://ali-ecs.truman.pro:26000/projects";
 const counter = {
@@ -104,7 +104,7 @@ function renderDialog() {
     + '<button id="confirm-btn">确认</button>'
     + '<button id="cancel-btn">取消</button>'
     + '</div></div>';
-  return dialogDiv
+  return dialogDiv;
 }
 
 function deleteProject(id) {
