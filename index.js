@@ -1,6 +1,6 @@
 import ajax from "./ajax.js"
 
-const ROOT_URL = "http://localhost:3000/projects";
+const ROOT_URL = "http://ali-ecs.truman.pro:26000/projects";
 const counter = {
   PENDING: 0,
   ACTIVE: 0,
