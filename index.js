@@ -55,9 +55,10 @@ function updateProjectsCount(status, offset) {
 function renderOverview() {
   document.querySelectorAll("#overview-cards article").forEach(card => {
     let status = card.id.substring(5).toUpperCase();  // "card-".length = 5
-    card.querySelector(".card-count").innerHTML = counter[status];
+    let count = counter[status];
+    card.querySelector(".card-count").innerHTML = count.toLocaleString();
     if (status !== "ALL") {
-      card.querySelector(".card-percent").innerHTML = Math.round(counter[status] / counter.ALL * 100).toString() + "%";
+      card.querySelector(".card-percent").innerHTML = Math.round(count / counter.ALL * 100).toString() + "%";
     }
   });
 }
