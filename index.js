@@ -41,7 +41,7 @@ function renderRow(data) {
     = `<td>${data.name}</td>`
     + `<td><p title="${data.description}">${data.description}</p</td>`
     + `<td>${data.endTime}</td>`
-    + `<td class="status-${data.status}">${data.status}</td>`
+    + `<td class="status-${data.status.toLowerCase()}">${data.status}</td>`
     + `<td><button class="del-btn" data-id =${data.id}>删除</button></td>`;
   return row;
 }
@@ -55,7 +55,7 @@ function updateProjectsCount(statusType, offset) {
 function renderOverviewCards() {
   let cards = document.querySelectorAll("#overview-cards article");
   for (let card of cards) {
-    let status = card.id.substring(5);  // "card-".length = 5
+    let status = card.id.substring(5).toUpperCase();  // "card-".length = 5
     card.querySelector(".card-count").innerHTML = counter[status];
     if (status !== "ALL") {
       card.querySelector(".card-percent").innerHTML = Math.round(counter[status] / counter.ALL * 100).toString() + "%";

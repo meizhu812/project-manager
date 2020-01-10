@@ -38,19 +38,19 @@ body {
   justify-content: space-between;
 }
 
-#card-ALL {
+#card-all {
   background-color: #31b48d;
 }
 
-#card-PENDING {
+#card-pending {
   background-color: #38a1f2;
 }
 
-#card-ACTIVE {
+#card-active {
   background-color: #7538c7;
 }
 
-#card-CLOSED {
+#card-closed {
   background-color: #3b67a4;
 }
 
@@ -143,15 +143,15 @@ body {
   border-bottom: 1px solid #dcdee3;
 }
 
-.status-PENDING {
+.status-pending {
   color: #ee706d;
 }
 
-.status-ACTIVE {
+.status-pending {
   color: #666666;
 }
 
-.status-CLOSED {
+.status-closed {
   color: #f7da47;
 }
 
