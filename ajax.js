@@ -1,8 +1,16 @@
-function isValidOptions(options) {  // GET & DELETE only!!!
+function isValidOptions(options) {  // TODO GET & DELETE only!!!
   let hasValidUrl = (options) => !options.url.includes("?");
-  let hasValidMethod = (options) => ['get', 'delete'].includes(options.method);
-  let hasValidCallbacks = (options) => typeof options.success === "function" && typeof options.fail === "function";
+  let hasValidMethod = (options) => ["GET", "DELETE"].includes(options.method.toUpperCase());
+  let hasValidCallbacks = (options) => typeof options.onSuccess === "function" && typeof options.onFail === "function";
   return hasValidUrl(options) && hasValidMethod(options) && hasValidCallbacks(options);
+}
+
+function isSuccess(request, method) {  // TODO GET & DELETE only!!!
+  switch (method.toUpperCase()) {
+    case "GET":
+    case "DELETE":
+      return request.status === 200;
+  }
 }
 
 export const ajax = (options) => {
@@ -10,16 +18,16 @@ export const ajax = (options) => {
     console.log('Invalid AJAX options\n' + JSON.stringify(options));
   }
   let request = new XMLHttpRequest();
-  request.open(options.method.toUpperCase(), options.url);
-  request.onload = function () {
-    if (request.status >= 200 && request.status < 300) {
-      options.success(...(options.successParams || [JSON.parse(request.responseText)]))
-    } else {
-      options.fail(request.responseText);
-    }
-  };
   request.onerror = () => {
     console.log('Request Error!');
+  };
+  request.open(options.method.toUpperCase(), options.url);
+  request.onload = function () {
+    if (isSuccess(request, options.method)) {
+      options.onSuccess(...(options.onSuccessParams || [JSON.parse(request.responseText)]))
+    } else {
+      options.onFail(request.responseText);
+    }
   };
   request.send();
 };
