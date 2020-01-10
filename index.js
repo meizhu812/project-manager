@@ -109,7 +109,7 @@ function renderDialog() {
 
 function deleteProject(id) {
   ajax({
-    url: ROOT_URL + '/' + id.toString(),
+    url: `${ROOT_URL}/${id}`,
     method: 'delete',
     onSuccess: removeEntry,
     onSuccessParams: [Number(id)],
