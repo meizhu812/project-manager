@@ -24,7 +24,7 @@ export const ajax = (options) => {
   request.open(options.method.toUpperCase(), options.url);
   request.onload = function () {
     if (isSuccess(request, options.method)) {
-      options.onSuccess(...(options.onSuccessParams || [JSON.parse(request.responseText)]))
+      options.onSuccess(options.onSuccessParam || JSON.parse(request.responseText));
     } else {
       options.onFail(request.responseText);
     }

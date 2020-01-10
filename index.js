@@ -112,7 +112,7 @@ function deleteProject(id) {
     url: `${ROOT_URL}/${id}`,
     method: 'delete',
     onSuccess: removeEntry,
-    onSuccessParams: [Number(id)],
+    onSuccessParam: Number(id),
     onFail: ajaxFailed
   })
 }
