@@ -27,12 +27,12 @@ function getAllProjects() {
 
 function initEntries(allData) {
   let entries = document.querySelector("#entries");
-  for (let data of allData) {
+  allData.forEach(data => {
     let entryRow = renderEntry(data);
     entries.appendChild(entryRow);
     idRowMap.set(data.id, entryRow);
     updateProjectsCount(data.status, 1);
-  }
+  });
 }
 
 function renderEntry(data) {
