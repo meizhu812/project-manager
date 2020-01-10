@@ -113,7 +113,7 @@ function deleteProject(id) {
 function removeEntry(id) {
   let target = idRowMap.get(id);
   let status = target.querySelector('td[class^=status]').innerHTML;
-  target.parentElement.removeChild(target);
+  target.remove();
   updateProjectsCount(status, -1);
 }
 
