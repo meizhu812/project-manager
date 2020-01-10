@@ -73,7 +73,7 @@ function handleCLick(entryEvt) {
           dialog.remove();
           break;
         case ("confirm-btn"):
-          deleteProject(Number(entryEvt.target.getAttribute("data-id")));
+          deleteProject(entryEvt.target.getAttribute("data-id"));
           dialog.remove();
           break;
       }
@@ -105,7 +105,7 @@ function deleteProject(id) {
     url: ROOT_URL + '/' + id.toString(),
     method: 'delete',
     success: removeEntry,
-    successParams: [id],
+    successParams: [Number(id)],
     fail: ajaxFailed
   })
 }
