@@ -5,7 +5,7 @@ function isValidOptions(options) {  // GET & DELETE only!!!
   return hasValidUrl(options) && hasValidMethod(options) && hasValidCallbacks(options);
 }
 
-export default (options) => {
+export const ajax = (options) => {
   if (!isValidOptions(options)) {
     console.log('Invalid AJAX options\n' + JSON.stringify(options));
   }
@@ -26,4 +26,4 @@ export default (options) => {
     console.log('Request Error!');
   };
   request.send();
-}
+};

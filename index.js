@@ -1,4 +1,4 @@
-import ajax from "./ajax.js"
+import {ajax} from "./ajax.js"
 
 const ROOT_URL = "http://ali-ecs.truman.pro:26000/projects";
 const counter = {
