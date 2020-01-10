@@ -53,14 +53,13 @@ function updateProjectsCount(status, offset) {
 }
 
 function renderOverview() {
-  let cards = document.querySelectorAll("#overview-cards article");
-  for (let card of cards) {
+  document.querySelectorAll("#overview-cards article").forEach(card => {
     let status = card.id.substring(5).toUpperCase();  // "card-".length = 5
     card.querySelector(".card-count").innerHTML = counter[status];
     if (status !== "ALL") {
       card.querySelector(".card-percent").innerHTML = Math.round(counter[status] / counter.ALL * 100).toString() + "%";
     }
-  }
+  });
 }
 
 function handleCLick(outEvt) {
