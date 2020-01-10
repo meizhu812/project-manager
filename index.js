@@ -87,9 +87,9 @@ function renderDialog() {
   dialogElement.setAttribute("id", "dialog");
   dialogElement.innerHTML
     = '<div class="dialog-box">'
-    + '<p class="iconfont icon-guanbi" id="close-btn"></p>'
+    + '<p class="iconfont" id="close-btn"></p>'
     + '<div class="hint-msg">'
-    + '<p class="iconfont icon-wenhao hint-icon"></p>'
+    + '<p class="iconfont hint-icon"></p>'
     + '<div class="hint-body">'
     + '<p class="hint-title">提示</p>'
     + '<p class="hint-text">确认删除该项目吗？</p>'
