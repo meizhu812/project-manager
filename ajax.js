@@ -13,11 +13,7 @@ export const ajax = (options) => {
   request.open(options.method.toUpperCase(), options.url);
   request.onload = function () {
     if (request.status >= 200 && request.status < 300) {
-      if (options.successParams) {
-        options.success(...options.successParams);
-      } else {
-        options.success(JSON.parse(request.responseText));
-      }
+      options.success(...(options.successParams || [JSON.parse(request.responseText)]))
     } else {
       options.fail(request.responseText);
     }
