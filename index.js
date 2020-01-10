@@ -46,8 +46,8 @@ function renderEntry(data) {
   return entryRow;
 }
 
-function updateProjectsCount(statusType, offset) {
-  counter[statusType] += offset;
+function updateProjectsCount(status, offset) {
+  counter[status] += offset;
   counter.ALL += offset;
   renderOverview();
 }
