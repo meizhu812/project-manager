@@ -28,31 +28,31 @@ function getAllProjects() {
 function initEntries(allData) {
   let entries = document.querySelector("#entries");
   for (let data of allData) {
-    let rowElement = renderRow(data);
-    entries.appendChild(rowElement);
-    idRowMap.set(data.id, rowElement);
+    let entryRow = renderEntry(data);
+    entries.appendChild(entryRow);
+    idRowMap.set(data.id, entryRow);
     updateProjectsCount(data.status, 1);
   }
 }
 
-function renderRow(data) {
-  let row = document.createElement("tr");
-  row.innerHTML
+function renderEntry(data) {
+  let entryRow = document.createElement("tr");
+  entryRow.innerHTML
     = `<td>${data.name}</td>`
     + `<td><p title="${data.description}">${data.description}</p</td>`
     + `<td>${data.endTime}</td>`
     + `<td class="status-${data.status.toLowerCase()}">${data.status}</td>`
     + `<td><button class="del-btn" data-id =${data.id}>删除</button></td>`;
-  return row;
+  return entryRow;
 }
 
 function updateProjectsCount(statusType, offset) {
   counter[statusType] += offset;
   counter.ALL += offset;
-  renderOverviewCards();
+  renderOverview();
 }
 
-function renderOverviewCards() {
+function renderOverview() {
   let cards = document.querySelectorAll("#overview-cards article");
   for (let card of cards) {
     let status = card.id.substring(5).toUpperCase();  // "card-".length = 5
@@ -67,7 +67,7 @@ function handleCLick(outEvt) {
   if (outEvt.target.tagName === "BUTTON") {
     let dialog = renderDialog();
     document.body.appendChild(dialog);
-    dialog.children[0].addEventListener('click', (inEvt => {
+    dialog.firstElementChild.addEventListener('click', (inEvt => {  // #dialog -> .dialog-box
       switch (inEvt.target.id) {
         case("close-btn"):
         case ("cancel-btn"):
@@ -83,9 +83,9 @@ function handleCLick(outEvt) {
 }
 
 function renderDialog() {
-  let dialogElement = document.createElement("div");
-  dialogElement.setAttribute("id", "dialog");
-  dialogElement.innerHTML
+  let dialogDiv = document.createElement("div");
+  dialogDiv.setAttribute("id", "dialog");
+  dialogDiv.innerHTML
     = '<div class="dialog-box">'
     + '<p class="iconfont" id="close-btn"></p>'
     + '<div class="hint-msg">'
@@ -98,7 +98,7 @@ function renderDialog() {
     + '<button id="confirm-btn">确认</button>'
     + '<button id="cancel-btn">取消</button>'
     + '</div></div>';
-  return dialogElement
+  return dialogDiv
 }
 
 function deleteProject(id) {
