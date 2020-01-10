@@ -65,28 +65,28 @@ function renderOverviewCards() {
 
 function handleCLick(outEvt) {
   if (outEvt.target.tagName === "BUTTON") {
-    let popupBox = renderPopupBox();
-    document.body.appendChild(popupBox);
-    popupBox.children[0].addEventListener('click', (inEvt => {
+    let dialog = renderDialog();
+    document.body.appendChild(dialog);
+    dialog.children[0].addEventListener('click', (inEvt => {
       switch (inEvt.target.id) {
         case("close-btn"):
         case ("cancel-btn"):
-          popupBox.parentElement.removeChild(popupBox);
+          dialog.parentElement.removeChild(dialog);
           break;
         case ("confirm-btn"):
           deleteProject(Number(outEvt.target.getAttribute("data-id")));
-          popupBox.parentElement.removeChild(popupBox);
+          dialog.parentElement.removeChild(dialog);
           break;
       }
     }), false);
   }
 }
 
-function renderPopupBox() {
-  let boxWithMask = document.createElement("div");
-  boxWithMask.setAttribute("id", "mask");
-  boxWithMask.innerHTML
-    = '<div class="msg-box">'
+function renderDialog() {
+  let dialogElement = document.createElement("div");
+  dialogElement.setAttribute("id", "dialog");
+  dialogElement.innerHTML
+    = '<div class="dialog-box">'
     + '<p class="iconfont icon-guanbi" id="close-btn"></p>'
     + '<div class="hint-msg">'
     + '<p class="iconfont icon-wenhao hint-icon"></p>'
@@ -98,7 +98,7 @@ function renderPopupBox() {
     + '<button id="confirm-btn">确认</button>'
     + '<button id="cancel-btn">取消</button>'
     + '</div></div>';
-  return boxWithMask
+  return dialogElement
 }
 
 function deleteProject(id) {
