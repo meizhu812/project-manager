@@ -62,18 +62,18 @@ function renderOverview() {
   });
 }
 
-function handleCLick(outEvt) {
-  if (outEvt.target.tagName === "BUTTON") {
+function handleCLick(entryEvt) {
+  if (entryEvt.target.tagName === "BUTTON") {
     let dialog = renderDialog();
     document.body.appendChild(dialog);
-    dialog.firstElementChild.addEventListener('click', (inEvt => {  // #dialog -> .dialog-box
-      switch (inEvt.target.id) {
+    dialog.firstElementChild.addEventListener('click', (dialogEvt => {  // #dialog -> .dialog-box
+      switch (dialogEvt.target.id) {
         case("close-btn"):
         case ("cancel-btn"):
           dialog.parentElement.removeChild(dialog);
           break;
         case ("confirm-btn"):
-          deleteProject(Number(outEvt.target.getAttribute("data-id")));
+          deleteProject(Number(entryEvt.target.getAttribute("data-id")));
           dialog.parentElement.removeChild(dialog);
           break;
       }
