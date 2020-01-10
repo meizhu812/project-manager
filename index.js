@@ -11,7 +11,7 @@ const idRowMap = new Map();
 
 window.onload = () => {
   getAllProjects();
-  document.querySelector("#entries").addEventListener("click", handleCLick, false);
+  document.querySelector("#entries").addEventListener("click", handleEntryCLick, false);
 };
 
 function getAllProjects() {
@@ -63,22 +63,28 @@ function renderOverview() {
   });
 }
 
-function handleCLick(entryEvt) {
-  if (entryEvt.target.tagName === "BUTTON") {
+function handleEntryCLick(entryEvt) {
+  let target = entryEvt.target;
+  if (target.tagName === "BUTTON") {
+    let entryId = target.getAttribute("data-id");
     let dialog = renderDialog();
     document.body.appendChild(dialog);
-    dialog.firstElementChild.addEventListener('click', (dialogEvt => {  // #dialog -> .dialog-box
+    let dialogBox = dialog.firstElementChild;
+    let handleEntryCLick = dialogEvt => {  // declare handler name in case of removal
       switch (dialogEvt.target.id) {
         case("close-btn"):
         case ("cancel-btn"):
+          dialogBox.removeEventListener('click', handleEntryCLick);
           dialog.remove();
           break;
         case ("confirm-btn"):
-          deleteProject(entryEvt.target.getAttribute("data-id"));
+          deleteProject(entryId);
+          dialogBox.removeEventListener('click', handleEntryCLick);
           dialog.remove();
           break;
       }
-    }), false);
+    };
+    dialogBox.addEventListener('click', handleEntryCLick, false);  // #dialog -> .dialog-box
   }
 }
 
