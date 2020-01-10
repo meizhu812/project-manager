@@ -70,11 +70,11 @@ function handleCLick(entryEvt) {
       switch (dialogEvt.target.id) {
         case("close-btn"):
         case ("cancel-btn"):
-          dialog.parentElement.removeChild(dialog);
+          dialog.remove();
           break;
         case ("confirm-btn"):
           deleteProject(Number(entryEvt.target.getAttribute("data-id")));
-          dialog.parentElement.removeChild(dialog);
+          dialog.remove();
           break;
       }
     }), false);
